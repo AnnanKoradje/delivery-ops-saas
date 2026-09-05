@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme { --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif; --font-display: 'Manrope', ui-sans-serif, system-ui, sans-serif; }
+
+@layer base { body { text-rendering: optimizeLegibility; } button, a { transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 160ms; } button:active { transform: scale(0.97); } }
+
+
+[x-cloak] { display: none !important; }
