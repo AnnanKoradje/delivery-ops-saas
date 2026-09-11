@@ -33,7 +33,8 @@ RUN apt-get update && apt-get install -y \
         bcmath \
         intl \
         zip \
-    && a2enmod rewrite \
+    && a2dismod mpm_event mpm_worker mpm_prefork || true \
+    && a2enmod mpm_prefork rewrite \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
