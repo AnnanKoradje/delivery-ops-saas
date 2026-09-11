@@ -77,5 +77,5 @@ RUN mkdir -p \
 RUN chown -R www-data:www-data storage bootstrap/cache
 
 EXPOSE 80
-CMD ["sh", "-c", "a2dismod mpm_event mpm_worker mpm_prefork 2>/dev/null || true; a2enmod mpm_prefork; php artisan migrate --force && apache2-foreground"]
+CMD ["sh", "-c", "a2dismod mpm_event mpm_worker mpm_prefork 2>/dev/null || true; a2enmod mpm_prefork; php artisan config:clear && php artisan migrate --force && apache2-foreground"]
 
